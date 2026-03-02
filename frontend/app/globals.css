@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+:root {
+  --body-grad: linear-gradient(0deg, #000 0%, #0b152e 100%);
+  --secondary-txt: #f9f9f9;
+}
+
+@theme {
+  --color-header: #141f34;
+  --color-primary-clr: #fff;
+  --color-border-clr: #2c3143;
+  --color-txt-hover: #00bdf5;
+}
+
+body {
+  background-image: var(--body-grad);
+  min-height: 100vh;
+  color: var(--secondary-txt);
+}
