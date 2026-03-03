@@ -5,11 +5,33 @@
   --secondary-txt: #f9f9f9;
 }
 
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0.4;
+    transform: translateY(28px);
+  }
+}
+
 @theme {
   --color-header: #141f34;
   --color-primary-clr: #fff;
   --color-border-clr: #2c3143;
   --color-txt-hover: #00bdf5;
+  --color-secondary-style: #01a8c5;
+  --color-btn-clr: #1b1b1d;
+
+  --background-image-future-grad: linear-gradient(
+    90deg,
+    #00b7fa 0%,
+    #8349fe 100%
+  );
+
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-scroll: scroll 2s infinite;
 }
 
 body {
