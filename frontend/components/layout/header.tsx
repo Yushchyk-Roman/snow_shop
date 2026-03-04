@@ -12,7 +12,7 @@ const navLinks = [
 export default function Header() {
   return (
     <header
-      className="h-20 mx-auto max-w-7xl my-8 
+      className="h-20 my-8 
     border-2 rounded-xl  bg-header/75 border-border-clr 
      top-4 sticky bg-blur backdrop-blur-md z-50 "
     >
