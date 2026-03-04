@@ -47,7 +47,7 @@ const FILTER_CONFIG: FilterSection[] = [
 
 export default function FilterSidebar() {
   return (
-    <aside className="w-full sticky top-32 h-[calc(100vh-6rem)] col-span-2 ">
+    <aside className="w-full col-span-2 ">
       <p className="text-2xl font-bold mb-8">Filters</p>
       <div className="border border-white/10 rounded-2xl bg-filter-bg mb-8">
         <div className="m-8">

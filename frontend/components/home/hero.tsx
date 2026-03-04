@@ -1,8 +1,9 @@
 export default function Hero (){
 
     return (
-        <section className="flex flex-col items-center min-h-[85vh] text-center">
-            <div className="flex gap-2 items-center mb-8 border-secondary-style/80 border rounded-3xl bg-secondary-style/8 px-4 py-2 ">
+        <section className="flex flex-col items-center min-h-[85vh] text-center max-w-360 w-full mx-auto">
+            <div className="flex gap-2 items-center mb-8 border-secondary-style/80 border
+             rounded-3xl bg-secondary-style/8 px-4 py-2 ">
                 <div className="w-2 h-2 rounded-full bg-secondary-style animate-pulse-slow "></div>
                 <p className="text-secondary-style ">Winter 2026 Collection</p>
             </div>

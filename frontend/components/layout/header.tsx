@@ -14,7 +14,7 @@ export default function Header() {
     <header
       className="h-20 my-8 
     border-2 rounded-xl  bg-header/75 border-border-clr 
-     top-4 sticky bg-blur backdrop-blur-md z-50 "
+     top-4 sticky bg-blur backdrop-blur-md z-50 max-w-360 w-full mx-auto"
     >
       <nav className="px-8 justify-between items-center h-full flex">
         <div>
