@@ -1,39 +1,8 @@
-import { FooterList } from "@/app/types/footer";
+import { getFooter } from "@/lib/api";
 
-const FOOTER_LIST: FooterList[] = [
-  {
-    id: "shop",
-    title: "Shop",
-    links: [
-      { name: "All Boards" },
-      { name: "New Arrivals" },
-      { name: "Best Sellers" },
-      { name: "Sale" },
-    ],
-  },
-  {
-    id: "support",
-    title: "Support",
-    links: [
-      { name: "Contact Us" },
-      { name: "Shipping Info" },
-      { name: "Returns" },
-      { name: "FAQ" },
-    ],
-  },
-  {
-    id: "connect",
-    title: "Connect",
-    links: [
-      { name: "Instagram" },
-      { name: "YouTube" },
-      { name: "Facebook" },
-      { name: "Twitter" },
-    ],
-  },
-];
+export default async function Footer() {
+  const footerData = await getFooter();
 
-export default function Footer() {
   return (
     <footer className="mb-20 max-w-360 w-full mx-auto">
       <div className="grid grid-cols-4 gap-12 mb-12">
@@ -49,9 +18,9 @@ export default function Footer() {
           </div>
         </div>
         <div className="col-span-3 flex justify-evenly gap-12">
-          {FOOTER_LIST.map((list_item) => {
+          {footerData.map((list_item) => {
             return (
-              <div className="">
+              <div className="" key={list_item.id}>
                 <p className="text-2xl font-bold mb-6">{list_item.title}</p>
 
                 <div className="flex flex-col gap-2 transition-all ease-in-out">

@@ -1,5 +1,6 @@
 import ProductCard from "./product-card";
 import { Grid3x3, List } from "lucide-react";
+import { getProducts } from "@/lib/api";
 
 const SORT_OPTIONS = [
   { label: "Featured", value: "featured" },
@@ -9,7 +10,9 @@ const SORT_OPTIONS = [
   { label: "Name: [A-Z]", value: "names_a_z" },
 ];
 
-export default function ProductList() {
+export default async function ProductList() {
+  const prouctsData = await getProducts();
+
   return (
     <section className="col-span-5">
       <div
@@ -48,8 +51,8 @@ export default function ProductList() {
       </div>
 
       <div className="grid grid-cols-2 gap-y-8">
-        {[...Array(10)].map((list_item) => {
-          return <ProductCard />;
+        {prouctsData.map((item) => {
+          return <ProductCard key={item.id} product={item}/>;
         })}
       </div>
     </section>

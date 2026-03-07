@@ -1,57 +1,16 @@
-import { FilterSection } from "@/app/types/filter";
+import { getFilters } from "@/lib/api";
 import Checkbox from "@/components/ui/checkbox";
 import { ChevronUp, ChevronDown } from "lucide-react";
 
-const FILTER_CONFIG: FilterSection[] = [
-  {
-    id: "stiffness",
-    title: "Stiffness",
-    items: [
-      { label: "Soft (1-3)", value: "soft" },
-      { label: "Medium (4-6)", value: "mediun" },
-      { label: "Stiff (7-10)", value: "stiff" },
-    ],
-  },
-  {
-    id: "camber_profile",
-    title: "Camber Profile",
-    items: [
-      { label: "Traditional Camber", value: "traditional_camber" },
-      { label: "Rocker", value: "rocket" },
-      { label: "Flat", value: "flat" },
-      { label: "Hybrid", value: "hybrid" },
-    ],
-  },
-  {
-    id: "shape",
-    title: "Shape",
-    items: [
-      { label: "Directional", value: "directional" },
-      { label: "True Twin", value: "true_twin" },
-      { label: "Directional Twin", value: "directional_twin" },
-      { label: "Asymmetric", value: "asymmetric" },
-    ],
-  },
-  {
-    id: "terrain",
-    title: "Terrain",
-    items: [
-      { label: "All-Mountain", value: "all_mountain" },
-      { label: "Freestyle", value: "freestyle" },
-      { label: "Freeride", value: "freeride" },
-      { label: "Powder", value: "powder" },
-      { label: "Park", value: "park" },
-    ],
-  },
-];
+export default async function FilterSidebar() {
+  const filterData = await getFilters();
 
-export default function FilterSidebar() {
   return (
     <aside className="w-full col-span-2 ">
       <p className="text-2xl font-bold mb-8">Filters</p>
       <div className="border border-white/10 rounded-2xl bg-filter-bg mb-8">
         <div className="m-8">
-          {FILTER_CONFIG.map((filter_categories) => {
+          {filterData.map((filter_categories) => {
             return (
               <div className="mb-8">
                 <div className="flex gap-4 justify-between  mb-4">
