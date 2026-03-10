@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, BadRequestException } from '@nestjs/common';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
@@ -7,9 +7,32 @@ import { PrismaService } from 'src/prisma/prisma.service';
 export class ProductsService {
   constructor(private prisma: PrismaService) {}
 
-  create(createProductDto: CreateProductDto) {
+  private generateSlug(title: string) {
+    return title
+      .toLowerCase()
+      .trim()
+      .replace(/[^\w\s-]/g, '')
+      .replace(/[\s_-]+/g, '-')
+      .replace(/^-+|-+$/g, '');
+  }
+
+  async create(createProductDto: CreateProductDto) {
+
+    const slug = this.generateSlug(createProductDto.title)
+
+    const existingProduct = await this.prisma.product.findUnique({
+      where: {slug}
+    })
+
+    if(existingProduct){
+      throw new BadRequestException('Товар з такою назвою вже існує, будь ласка, змініть назву.')
+    }
+
     return this.prisma.product.create({
-      data: createProductDto,
+      data: {
+        ...createProductDto,
+        slug: slug
+      }
     });
   }
 
