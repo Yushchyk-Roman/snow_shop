@@ -6,15 +6,29 @@ datasource db {
   provider = "postgresql"
 }
 
-model Product {
-  id    Int    @id @default(autoincrement())
-  title String
-  brand String
-  price Int
-  image String
+enum Category {
+  BOARD
+  BINDING
+  BOOT
+  GEAR
+}
 
+model Product {
+  id          Int    @id @default(autoincrement())
+  title       String
+  slug        String @unique
+  brand       String
+  description String
+  category Category
+
+  price    Int
+  oldPrice Int?
+  stock    Int  @default(0)
+
+  images String[]
   badges String[]
-  specs  String[]
+
+  attributes Json?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
