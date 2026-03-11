@@ -1,10 +1,14 @@
 export type Product = {
-  id: string;
-  brand: string;
+    id: number,
   title: string;
+  slug: string;
+  brand: string;
+  description: string;
+  category: string;
   price: number;
-  image: string;
-  rating: number;
-  badges: string[]; 
-  specs: string[]; 
-};
+  oldPrice: number;
+  stock: number;
+  images: string[];
+  badges: string[];
+  attributes: Record<string, any>;
+}
