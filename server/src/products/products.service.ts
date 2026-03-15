@@ -94,7 +94,7 @@ export class ProductsService {
         name: item.brand,
         count: item._count,
       })),
-      Categories: categoryData.map((item) => ({
+      categories: categoryData.map((item) => ({
         name: item.category,
         count: item._count,
       })),
