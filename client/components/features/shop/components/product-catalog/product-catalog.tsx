@@ -1,5 +1,6 @@
 import { Grid3x3, List } from "lucide-react";
 import { ProductList } from "./product-list";
+import { Product } from "@/types/product";
 
 const SORT_OPTIONS = [
   { label: "Featured", value: "featured" },
@@ -9,7 +10,7 @@ const SORT_OPTIONS = [
   { label: "Name: [A-Z]", value: "names_a_z" },
 ];
 
-export default function ProductCatalog() {
+export default function ProductCatalog({products}: {products: Product[]}) {
 
   return (
     <section className="col-span-5">
@@ -18,7 +19,7 @@ export default function ProductCatalog() {
        border-white/10 bg-filter-bg rounded-2xl mb-8 "
       >
         <p className="text-white/50">
-          <span>6</span> products
+          <span>{products.length}</span> products
         </p>
 
         <div className="flex gap-8">
@@ -47,14 +48,8 @@ export default function ProductCatalog() {
           </div>
         </div>
       </div>
-{/* 
-      <div className="grid grid-cols-2 gap-y-8">
-        {prouctsData.map((item) => {
-          return <ProductCard key={item.id} product={item}/>;
-        })}
-      </div> */}
 
-      <ProductList />
+      <ProductList products={products} />
     </section>
   );
 }

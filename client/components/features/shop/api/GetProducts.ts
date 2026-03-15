@@ -1,4 +1,6 @@
-export const GetProducts = async () => {
+import { Product } from "@/types/product";
+
+export const GetProducts = async (): Promise<Product[]> => {
   const res = await fetch("http://localhost:4200/products", {
     cache: "no-store",
   });
