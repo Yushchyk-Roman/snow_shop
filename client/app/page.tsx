@@ -1,6 +1,6 @@
 import Header from "../components/layout/header";
 import Hero from "../components/home/hero";
-import Catalog from "@/components/home/tranding-collection";
+import Catalog from "@/components/features/shop/components/tranding-collection";
 import Footer from "@/components/layout/footer";
 export default function Home() {
   return (

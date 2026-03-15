@@ -53,7 +53,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         <p className="text-add-color font-medium  uppercase">{product.brand}</p>
         <h4 className="text-2xl font-medium">{product.title}</h4>
         <div className="flex gap-2 text-white/50 mb-2">
-          {product.attributes?.terrain.map((item: string, index: number) => (
+          {product.attributes?.terrain?.map((item: string, index: number) => (
             <p key={index} className="bg-filter-bg px-2 py-1 border border-white/20 rounded-lg ">
               {item}
             </p>
