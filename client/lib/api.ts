@@ -1,6 +1,6 @@
 import { FOOTER_LIST, FILTER_CONFIG, PRODUCTS } from "@/lib/data";
 import { Product } from "@/types/product";
-import { FilterSection } from "@/types/filter";
+import { FilterSection } from "@/components/features/shop/types/filter";
 import { FooterList } from "@/types/footer";
 
 const simulateFetch = async <T>(data: T): Promise<T> => {

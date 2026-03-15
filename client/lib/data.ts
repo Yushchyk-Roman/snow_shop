@@ -1,5 +1,5 @@
 import { FooterList } from "@/types/footer";
-import { FilterSection } from "@/types/filter";
+import { FilterSection } from "@/components/features/shop/types/filter";
 import { Product } from "@/types/product";
 
 export const FOOTER_LIST: FooterList[] = [

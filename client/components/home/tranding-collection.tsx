@@ -1,5 +1,5 @@
-import FilterSidebar from "@/components/features/shop/filter-sidebar";
-import ProductList from "../features/shop/product-catalog";
+import FilterSidebar from "@/components/features/shop/components/filter-catalog/filter-sidebar";
+import ProductList from "../features/shop/components/product-catalog/product-catalog";
 
 export default function Catalog() {
   return (
